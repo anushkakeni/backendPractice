@@ -21,9 +21,10 @@ db.connect((err) => {
 });
 
 //READ OF CRUD 
-app.get("/products", (req, res) => {
-
-    var sql= "Select * from products ORDER BY id DESC LIMIT 0,10";
+app.get("/products/:id", (req, res) => {
+  
+    const id = Number(req.params.id);
+    var sql= `Select * from products where id = ${id}`; // id of product to read will come from client in request url as path parameter
 
     db.query(sql, (err, result) => {
         res.send(result);
