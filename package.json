@@ -5,8 +5,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-   "type": "module",
-   
+  "type": "module",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/anushkakeni/backendPractice.git"
@@ -20,6 +19,7 @@
   "homepage": "https://github.com/anushkakeni/backendPractice#readme",
   "description": "",
   "dependencies": {
-    "express": "^5.2.1"
+    "express": "^5.2.1",
+    "nodemon": "^3.1.14"
   }
 }

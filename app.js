@@ -19,6 +19,29 @@ app.get("/products", (req,res) => {
     res.send(products);
 })
 
+pp.use(express.json()); //middleware to receive json object from client in request body
+
+//POST 
+app.post("/products", (req,res) => {
+  // logic to add new product to products array
+    //var rec= [{ "id":3, "title": "vivo", "price":40000}];
+
+ console.log(req.body);   
+ var rec= req.body;
+  products.push(rec);
+    res.send("product added successfully");
+})
+
+app.put("/products", (req,res) => {
+    res.send("put request received");
+})
+
+app.delete("/products", (req,res) => {
+
+   
+    res.send("delete request received");
+})
+
 app.listen(3000, () => {
     console.log("App is serving on port 3000");
 })
