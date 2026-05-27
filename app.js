@@ -25,6 +25,9 @@ app.use(express.json()); //middleware to receive json object from client in requ
 app.post("/products", (req,res) => {
   // logic to add new product to products array
     //var rec= [{ "id":3, "title": "vivo", "price":40000}];
+
+    // var x= req.body.num // to receive number from client
+    // res.send(`${x} - ${y} = {x-y}`); // to send response to client
  console.log(req.body);   
  var rec= req.body;
   products.push(rec);
