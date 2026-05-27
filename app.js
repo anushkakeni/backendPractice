@@ -19,24 +19,41 @@ app.get("/products", (req,res) => {
     res.send(products);
 })
 
-pp.use(express.json()); //middleware to receive json object from client in request body
+app.use(express.json()); //middleware to receive json object from client in request body
 
 //POST 
 app.post("/products", (req,res) => {
   // logic to add new product to products array
     //var rec= [{ "id":3, "title": "vivo", "price":40000}];
-
  console.log(req.body);   
  var rec= req.body;
   products.push(rec);
     res.send("product added successfully");
 })
 
+
+//PUT 
 app.put("/products", (req,res) => {
-    res.send("put request received");
+  //var prod = {"id": 2,"title": "samsung","price": 22000};  hard coded product to update
+
+  var prod= req.body; // product to update will come from client in request body    
+
+  products = products.map(p => {
+    if(p.id == prod.id){
+        p.title = prod.title;
+        p.price = prod.price;
+    }
+    return p;
+  })
+
+    res.send("product updated successfully");
 })
 
-app.delete("/products", (req,res) => {
+
+
+
+//DELETE
+app.delete("/products", (req,res) => {  
 
    
     res.send("delete request received");
