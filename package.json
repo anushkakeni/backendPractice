@@ -1,0 +1,25 @@
+{
+  "name": "backendpractice",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+   "type": "module",
+   
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anushkakeni/backendPractice.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/anushkakeni/backendPractice/issues"
+  },
+  "homepage": "https://github.com/anushkakeni/backendPractice#readme",
+  "description": "",
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}
