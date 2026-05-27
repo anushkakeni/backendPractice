@@ -53,11 +53,19 @@ app.put("/products", (req,res) => {
 
 
 //DELETE
-app.delete("/products", (req,res) => {  
-
+app.delete("/products/:id", (req,res) => {  
+//   console.log("Params: ", req.params);
+//   console.log("Query: ", req.query);
+    //var id=1;
+    var id= Number(req.params.id); // id of product to delete will come from client in request url as path parameter    
+    products = products.filter(p => {
+        return p.id !== id;
+    } )
    
-    res.send("delete request received");
+    res.send("Product delete successfully");
 })
+
+ 
 
 app.listen(3000, () => {
     console.log("App is serving on port 3000");
